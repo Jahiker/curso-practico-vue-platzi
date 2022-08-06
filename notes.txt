@@ -1,0 +1,7 @@
+# Curso Practico de Vue
+
+## Componente Suspense 
+-- Pemite mantener en suspenso la carga de un componente 
+-- Dentro del componentes deben existir dos templates, uno con slot default y otro con slot fallback
+-- Dentro del template con slots default es el componente que se carga de forma asincrona
+-- Dentro del template con slots fallback es el componente que se muestra mientras se carga el componente asincrono (Una especie de loader)
