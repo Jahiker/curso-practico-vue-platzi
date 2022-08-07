@@ -1,3 +1,29 @@
 <template>
-    <p>Hola Mundo</p>
+    <layout>
+        <template #header>
+            <Header />
+        </template>
+        <template #resume>
+            <Resume />
+        </template>
+        <template #movements>
+            <Movements />
+        </template>
+    </layout>
 </template>
+
+<script>
+import Layout from "./Layout.vue";
+import Header from "./Header.vue";
+import Resume from "./Resume/Index.vue";
+import Movements from "./Movements.vue";
+
+export default {
+    components: {
+        Layout,
+        Header,
+        Resume,
+        Movements
+    }
+}
+</script>

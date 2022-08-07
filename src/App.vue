@@ -18,9 +18,7 @@ export default {
 
 <template>
   <Suspense>
-    <template #default>
-      <Home />
-    </template>
+    <Home />
     <template #fallback>
       <SplashScreen />
     </template>
@@ -33,11 +31,5 @@ body,
 .app {
   min-height: 100vh;
   margin: 0;
-}
-
-* {
-  font-family: 'Lato', sans-serif;
-  --brand-green: #04b500;
-  --brand-blue: #0689b0;
 }
 </style>
