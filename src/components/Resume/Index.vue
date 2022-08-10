@@ -12,7 +12,7 @@
 </template>
 
 <script>
-const currencyFormater = new Intl.NumberFormat("es-VE", {
+const currencyFormater = new Intl.NumberFormat("es-US", {
 	style: "currency",
 	currency: "USD",
 }); 
