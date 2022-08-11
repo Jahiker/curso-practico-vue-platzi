@@ -5,7 +5,7 @@
             <img @click="close" src="@/assets/close-icon.svg" alt="Cerrar popup">
         </div>
         <div class="body">
-            <slots>Aqui va el formulario</slots>
+            <slot></slot>
         </div>
     </div>
 </template>
