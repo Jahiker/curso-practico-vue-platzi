@@ -1,5 +1,5 @@
 <template>
-    <div class="movement">
+    <div :class="`movement ${ isNegative ? 'spend' : 'add' }`">
         <div class="content">
             <h4>{{ title }}</h4>
             <p>{{ description }}</p>
@@ -58,9 +58,18 @@ const remove = () => {
     align-items: center;
     width: 100%;
     padding: 16px;
-    background-color: #e6f9ff;
     border-radius: 8px;
     box-sizing: border-box;
+}
+
+.movement.spend {
+    background-color: #ffd8d8;
+    border: 2px solid red;
+}
+
+.movement.add {
+    background-color: #dcffd8;
+    border: 2px solid green;
 }
 
 .movement .content {
@@ -90,9 +99,11 @@ h4 {
 
 .red {
     color: red;
+    font-weight: bold;
 }
 
 .green {
     color: green;
+    font-weight: bold;
 }
 </style>
