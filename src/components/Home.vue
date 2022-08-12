@@ -4,22 +4,17 @@
             <Header />
         </template>
         <template #resume>
-            <Resume 
-                :label="'Ahorro total'"
-                :label-date="labelDate"
-                :amount="amount"
-                :total-amount="100000"
-            >
-                <template #graphic>graphic</template>
+            <Resume :label="'Ahorro total'" :label-date="labelDate" :amount="amount" :total-amount="100000">
+                <template #graphic>
+                    <GraphicVue :amounts="amounts" />
+                </template>
                 <template #action>
                     <Action />
                 </template>
             </Resume>
         </template>
         <template #movements>
-            <Movements 
-                :movements="movements"
-            />
+            <Movements :movements="movements" />
         </template>
     </layout>
 </template>
@@ -30,18 +25,21 @@ import Header from "./Header.vue";
 import Resume from "./Resume/Index.vue";
 import Movements from "./Movements.vue";
 import Action from "./Action.vue";
+import GraphicVue from "./Graphic.vue";
 
 export default {
     components: {
-    Layout,
-    Header,
-    Resume,
-    Movements,
-    Action
-},
+        Layout,
+        Header,
+        Resume,
+        Movements,
+        Action,
+        GraphicVue
+    },
     data() {
         return {
             amount: null,
+            amounts: [100, 200, 500, 200, -400, -600, -300, 0, 300, 500],
             labelDate: null,
             movements: [{
                 id: 0,
