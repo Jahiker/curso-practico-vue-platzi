@@ -59,6 +59,11 @@
           time: new Date(),
           id: Date.now()
         })
+
+        title.value = "";
+        description.value = "";
+        amount.value = 0;
+        movementType.value = "Ingreso";
     }
 </script>
 
