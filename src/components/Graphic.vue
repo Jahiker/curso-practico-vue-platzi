@@ -1,10 +1,10 @@
 <template>
-    <div class="graphic">
+    <div>
         <svg
-            viewBox="0 0 300 200"
             @touchstart="tap"
             @touchmove="tap"
             @touchend="untap"
+            viewBox="0 0 300 200"
         >
             <line 
                 stroke="#c4c4c4"
@@ -35,7 +35,7 @@
 </template>
 
 <script setup>
-    import { defineProps, toRefs, computed, ref } from 'vue';
+    import { defineProps, toRefs, computed, ref, defineEmits } from 'vue';
 
     const props = defineProps({
         amounts: {
@@ -72,6 +72,8 @@
     const showPointer = ref(false);
     const pointer = ref(0);
 
+    const emit = defineEmits(["select"]);
+
     const tap = ({ target, touches }) => {
         showPointer.value = true;
         const elementWidth = target.getBoundingClientRect().width;
@@ -79,6 +81,8 @@
         const touchX = touches[0].clientX;
 
         pointer.value = ((touchX - elementX) * 300) / elementWidth;
+
+        emit("select", pointer.value);
     }
 
     const untap = () => {
